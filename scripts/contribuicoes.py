@@ -95,21 +95,31 @@ MODELO = """<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.o
 """
 
 
-# Calendário público de contribuições
-def calendario(usuario):
+# Calendário público de contribuições, desde a criação da conta
+INICIO = dt.date(2022, 10, 26)
+
+
+def calendario_do_ano(usuario, ano):
     pedido = urllib.request.Request(
-        f"https://github.com/users/{usuario}/contributions",
+        f"https://github.com/users/{usuario}/contributions?from={ano}-01-01&to={ano}-12-31",
         headers={"User-Agent": "Mozilla/5.0"},
     )
     html = urllib.request.urlopen(pedido, timeout=30).read().decode("utf-8")
-    datas = dict(re.findall(r'<td[^>]*data-date="(\d{4}-\d{2}-\d{2})"[^>]*id="([^"]+)"', html))
-    datas = {id_: data for data, id_ in datas.items()}
+    datas = {id_: data for data, id_ in re.findall(r'<td[^>]*data-date="(\d{4}-\d{2}-\d{2})"[^>]*id="([^"]+)"', html)}
     dias = {}
     for id_, texto in re.findall(r'<tool-tip[^>]*for="([^"]+)"[^>]*>([^<]*)</tool-tip>', html):
-        if id_ not in datas:
-            continue
-        numero = re.match(r"\s*(\d+) contribution", texto)
-        dias[dt.date.fromisoformat(datas[id_])] = int(numero.group(1)) if numero else 0
+        if id_ in datas:
+            numero = re.match(r"\s*(\d+) contribution", texto)
+            dias[dt.date.fromisoformat(datas[id_])] = int(numero.group(1)) if numero else 0
+    return dias
+
+
+def calendario(usuario):
+    hoje = dt.date.today()
+    dias = {}
+    for ano in range(INICIO.year, hoje.year + 1):
+        dias.update(calendario_do_ano(usuario, ano))
+    dias = {dia: n for dia, n in dias.items() if INICIO <= dia <= hoje}
     if not dias:
         sys.exit("calendario vazio")
     return dict(sorted(dias.items()))
