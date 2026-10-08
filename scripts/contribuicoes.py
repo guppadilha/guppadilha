@@ -5,7 +5,7 @@ import urllib.request
 from pathlib import Path
 
 USUARIO = "guppadilha"
-SAIDA = Path(__file__).resolve().parent.parent / "contribuicoes.svg"
+SAIDA = Path(__file__).resolve().parent.parent / "card-contribuicoes.svg"
 
 MODELO = """<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'
                 style='isolation: isolate' viewBox='0 0 495 195' width='495px' height='195px' direction='ltr'>

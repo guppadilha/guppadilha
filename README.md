@@ -23,6 +23,6 @@ Construo sistemas completos, do banco de dados à tela. Na [TargetData](https://
 
 ### 📊 Contribuições no GitHub
 
-![Contribuições do Gustavo no GitHub](contribuicoes.svg)
+![Contribuições do Gustavo no GitHub](card-contribuicoes.svg)
 
 Obrigado pela visita! 🚀
