@@ -23,6 +23,6 @@ Construo sistemas completos, do banco de dados à tela. Na [TargetData](https://
 
 ### 📊 Contribuições no GitHub
 
-![Contribuições do Gustavo no GitHub](https://streak-stats.demolab.com/?user=guppadilha&locale=pt_BR&hide_border=true)
+![Contribuições do Gustavo no GitHub](contribuicoes.svg)
 
 Obrigado pela visita! 🚀

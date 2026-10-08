@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="120" viewBox="0 0 480 120" role="img" aria-label="Contribuições no GitHub">
+<style>
+.fundo { fill: #ffffff; stroke: #e1e4e8; }
+.valor { font: 700 24px -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; fill: #1f2328; text-anchor: middle; }
+.rotulo { font: 400 12px -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; fill: #59636e; text-anchor: middle; }
+.linha { stroke: #e1e4e8; }
+@media (prefers-color-scheme: dark) {
+  .fundo { fill: #0d1117; stroke: #30363d; }
+  .valor { fill: #f0f6fc; }
+  .rotulo { fill: #9198a1; }
+  .linha { stroke: #30363d; }
+}
+</style>
+<rect class="fundo" fill="#ffffff" stroke="#e1e4e8" x="0.5" y="0.5" width="479" height="119" rx="8"/>
+<line class="linha" stroke="#e1e4e8" x1="170" y1="30" x2="170" y2="96"/>
+<line class="linha" stroke="#e1e4e8" x1="330" y1="30" x2="330" y2="96"/>
+<text x="90" y="62" class="valor" fill="#1f2328" text-anchor="middle" font-size="24" font-weight="700" font-family="Segoe UI, Helvetica, Arial, sans-serif">636</text><text x="90" y="88" class="rotulo" fill="#59636e" text-anchor="middle" font-size="12" font-family="Segoe UI, Helvetica, Arial, sans-serif">Contribuições no último ano</text><text x="250" y="62" class="valor" fill="#1f2328" text-anchor="middle" font-size="24" font-weight="700" font-family="Segoe UI, Helvetica, Arial, sans-serif">4 dias</text><text x="250" y="88" class="rotulo" fill="#59636e" text-anchor="middle" font-size="12" font-family="Segoe UI, Helvetica, Arial, sans-serif">Sequência atual</text><text x="410" y="62" class="valor" fill="#1f2328" text-anchor="middle" font-size="24" font-weight="700" font-family="Segoe UI, Helvetica, Arial, sans-serif">5 dias</text><text x="410" y="88" class="rotulo" fill="#59636e" text-anchor="middle" font-size="12" font-family="Segoe UI, Helvetica, Arial, sans-serif">Maior sequência</text>
+</svg>
