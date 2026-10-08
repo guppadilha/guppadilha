@@ -7,6 +7,93 @@ from pathlib import Path
 USUARIO = "guppadilha"
 SAIDA = Path(__file__).resolve().parent.parent / "contribuicoes.svg"
 
+MODELO = """<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'
+                style='isolation: isolate' viewBox='0 0 495 195' width='495px' height='195px' direction='ltr'>
+        <style>
+            @keyframes currstreak {
+                0% { font-size: 3px; opacity: 0.2; }
+                80% { font-size: 34px; opacity: 1; }
+                100% { font-size: 28px; opacity: 1; }
+            }
+            @keyframes fadein {
+                0% { opacity: 0; }
+                100% { opacity: 1; }
+            }
+        </style>
+        <defs>
+            <clipPath id='outer_rectangle'>
+                <rect width='495' height='195' rx='4.5'/>
+            </clipPath>
+            <mask id='mask_out_ring_behind_fire'>
+                <rect width='495' height='195' fill='white'/>
+                <ellipse id='mask-ellipse' cx='247.5' cy='32' rx='13' ry='18' fill='black'/>
+            </mask>
+            
+        </defs>
+        <g clip-path='url(#outer_rectangle)'>
+            <g style='isolation: isolate'>
+                <rect stroke='#000000' stroke-opacity='0' fill='#FFFEFE' rx='4.5' x='0.5' y='0.5' width='494' height='194'/>
+            </g>
+            <g style='isolation: isolate'>
+                <line x1='165' y1='28' x2='165' y2='170' vector-effect='non-scaling-stroke' stroke-width='1' stroke='#E4E2E2' stroke-linejoin='miter' stroke-linecap='square' stroke-miterlimit='3'/>
+                <line x1='330' y1='28' x2='330' y2='170' vector-effect='non-scaling-stroke' stroke-width='1' stroke='#E4E2E2' stroke-linejoin='miter' stroke-linecap='square' stroke-miterlimit='3'/>
+            </g>
+            <g style='isolation: isolate'>
+                <g transform='translate(82.5, 48)'>
+                    <text x='0' y='32' stroke-width='0' text-anchor='middle' fill='#151515' stroke='none' font-family='"Segoe UI", Ubuntu, sans-serif' font-weight='700' font-size='28px' font-style='normal' style='opacity: 0; animation: fadein 0.5s linear forwards 0.6s'>{TOTAL}</text>
+                </g>
+                <g transform='translate(82.5, 84)'>
+                    <text x='0' y='32' stroke-width='0' text-anchor='middle' fill='#151515' stroke='none' font-family='"Segoe UI", Ubuntu, sans-serif' font-weight='400' font-size='14px' font-style='normal' style='opacity: 0; animation: fadein 0.5s linear forwards 0.7s'>
+                        Total de Contribuições
+                    </text>
+                </g>
+                <g transform='translate(82.5, 114)'>
+                    <text x='0' y='32' stroke-width='0' text-anchor='middle' fill='#464646' stroke='none' font-family='"Segoe UI", Ubuntu, sans-serif' font-weight='400' font-size='12px' font-style='normal' style='opacity: 0; animation: fadein 0.5s linear forwards 0.8s'>
+                        {PERIODO_TOTAL}
+                    </text>
+                </g>
+            </g>
+            <g style='isolation: isolate'>
+                <g transform='translate(247.5, 108)'>
+                    <text x='0' y='32' stroke-width='0' text-anchor='middle' fill='#FB8C00' stroke='none' font-family='"Segoe UI", Ubuntu, sans-serif' font-weight='700' font-size='14px' font-style='normal' style='opacity: 0; animation: fadein 0.5s linear forwards 0.9s'>
+                        Sequência Atual
+                    </text>
+                </g>
+                <g transform='translate(247.5, 145)'>
+                    <text x='0' y='21' stroke-width='0' text-anchor='middle' fill='#464646' stroke='none' font-family='"Segoe UI", Ubuntu, sans-serif' font-weight='400' font-size='12px' font-style='normal' style='opacity: 0; animation: fadein 0.5s linear forwards 0.9s'>{PERIODO_ATUAL}</text>
+                </g>
+                <g mask='url(#mask_out_ring_behind_fire)'>
+                    <circle cx='247.5' cy='71' r='40' fill='none' stroke='#FB8C00' stroke-width='5' style='opacity: 0; animation: fadein 0.5s linear forwards 0.4s'></circle>
+                </g>
+                <g transform='translate(247.5, 19.5)' stroke-opacity='0' style='opacity: 0; animation: fadein 0.5s linear forwards 0.6s'>
+                    <path d='M -12 -0.5 L 15 -0.5 L 15 23.5 L -12 23.5 L -12 -0.5 Z' fill='none'/>
+                    <path d='M 1.5 0.67 C 1.5 0.67 2.24 3.32 2.24 5.47 C 2.24 7.53 0.89 9.2 -1.17 9.2 C -3.23 9.2 -4.79 7.53 -4.79 5.47 L -4.76 5.11 C -6.78 7.51 -8 10.62 -8 13.99 C -8 18.41 -4.42 22 0 22 C 4.42 22 8 18.41 8 13.99 C 8 8.6 5.41 3.79 1.5 0.67 Z M -0.29 19 C -2.07 19 -3.51 17.6 -3.51 15.86 C -3.51 14.24 -2.46 13.1 -0.7 12.74 C 1.07 12.38 2.9 11.53 3.92 10.16 C 4.31 11.45 4.51 12.81 4.51 14.2 C 4.51 16.85 2.36 19 -0.29 19 Z' fill='#FB8C00' stroke-opacity='0'/>
+                </g>
+                <g transform='translate(247.5, 48)'>
+                    <text x='0' y='32' stroke-width='0' text-anchor='middle' fill='#151515' stroke='none' font-family='"Segoe UI", Ubuntu, sans-serif' font-weight='700' font-size='28px' font-style='normal' style='animation: currstreak 0.6s linear forwards'>{ATUAL}</text>
+                </g>
+
+            </g>
+            <g style='isolation: isolate'>
+                <g transform='translate(412.5, 48)'>
+                    <text x='0' y='32' stroke-width='0' text-anchor='middle' fill='#151515' stroke='none' font-family='"Segoe UI", Ubuntu, sans-serif' font-weight='700' font-size='28px' font-style='normal' style='opacity: 0; animation: fadein 0.5s linear forwards 1.2s'>{MAIOR}</text>
+                </g>
+                <g transform='translate(412.5, 84)'>
+                    <text x='0' y='32' stroke-width='0' text-anchor='middle' fill='#151515' stroke='none' font-family='"Segoe UI", Ubuntu, sans-serif' font-weight='400' font-size='14px' font-style='normal' style='opacity: 0; animation: fadein 0.5s linear forwards 1.3s'>
+                        Maior Sequência
+                    </text>
+                </g>
+                <g transform='translate(412.5, 114)'>
+                    <text x='0' y='32' stroke-width='0' text-anchor='middle' fill='#464646' stroke='none' font-family='"Segoe UI", Ubuntu, sans-serif' font-weight='400' font-size='12px' font-style='normal' style='opacity: 0; animation: fadein 0.5s linear forwards 1.4s'>
+                        {PERIODO_MAIOR}
+                    </text>
+                </g>
+            </g>
+            
+        </g>
+    </svg>
+"""
+
 
 # Calendário público de contribuições
 def calendario(usuario):
@@ -31,57 +118,61 @@ def calendario(usuario):
 # Sequências de dias com contribuição
 def sequencias(dias):
     hoje = max(dias)
-    atual = 0
-    dia = hoje if dias[hoje] else hoje - dt.timedelta(days=1)
-    while dias.get(dia, 0):
-        atual += 1
-        dia -= dt.timedelta(days=1)
-    maior = corrente = 0
-    for quantidade in dias.values():
-        corrente = corrente + 1 if quantidade else 0
-        maior = max(maior, corrente)
+    fim = hoje if dias[hoje] else hoje - dt.timedelta(days=1)
+    inicio = fim
+    while dias.get(inicio - dt.timedelta(days=1), 0):
+        inicio -= dt.timedelta(days=1)
+    atual = (inicio, fim, (fim - inicio).days + 1) if dias.get(fim, 0) else (None, None, 0)
+    maior = (None, None, 0)
+    corrente_inicio = None
+    for dia, quantidade in dias.items():
+        if quantidade:
+            corrente_inicio = corrente_inicio or dia
+            tamanho = (dia - corrente_inicio).days + 1
+            if tamanho > maior[2]:
+                maior = (corrente_inicio, dia, tamanho)
+        else:
+            corrente_inicio = None
     return atual, maior
+
+
+MESES = ["jan.", "fev.", "mar.", "abr.", "mai.", "jun.", "jul.", "ago.", "set.", "out.", "nov.", "dez."]
+
+
+def data(dia, hoje):
+    texto = f"{dia.day} de {MESES[dia.month - 1]}"
+    return texto if dia.year == hoje.year else f"{texto} de {dia.year}"
 
 
 def numero(valor):
     return f"{valor:,}".replace(",", ".")
 
 
-# Card em SVG
-def svg(total, atual, maior):
-    colunas = [
-        (numero(total), "Contribuições no último ano"),
-        (f"{atual} {'dia' if atual == 1 else 'dias'}", "Sequência atual"),
-        (f"{maior} {'dia' if maior == 1 else 'dias'}", "Maior sequência"),
-    ]
-    blocos = "".join(
-        f'<text x="{90 + i * 160}" y="62" class="valor" fill="#1f2328" text-anchor="middle" font-size="24" font-weight="700" font-family="Segoe UI, Helvetica, Arial, sans-serif">{valor}</text>'
-        f'<text x="{90 + i * 160}" y="88" class="rotulo" fill="#59636e" text-anchor="middle" font-size="12" font-family="Segoe UI, Helvetica, Arial, sans-serif">{rotulo}</text>'
-        for i, (valor, rotulo) in enumerate(colunas)
-    )
-    return f"""<svg xmlns="http://www.w3.org/2000/svg" width="480" height="120" viewBox="0 0 480 120" role="img" aria-label="Contribuições no GitHub">
-<style>
-.fundo {{ fill: #ffffff; stroke: #e1e4e8; }}
-.valor {{ font: 700 24px -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; fill: #1f2328; text-anchor: middle; }}
-.rotulo {{ font: 400 12px -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; fill: #59636e; text-anchor: middle; }}
-.linha {{ stroke: #e1e4e8; }}
-@media (prefers-color-scheme: dark) {{
-  .fundo {{ fill: #0d1117; stroke: #30363d; }}
-  .valor {{ fill: #f0f6fc; }}
-  .rotulo {{ fill: #9198a1; }}
-  .linha {{ stroke: #30363d; }}
-}}
-</style>
-<rect class="fundo" fill="#ffffff" stroke="#e1e4e8" x="0.5" y="0.5" width="479" height="119" rx="8"/>
-<line class="linha" stroke="#e1e4e8" x1="170" y1="30" x2="170" y2="96"/>
-<line class="linha" stroke="#e1e4e8" x1="330" y1="30" x2="330" y2="96"/>
-{blocos}
-</svg>
-"""
+def intervalo(inicio, fim, hoje, duas_linhas=False):
+    if inicio is None:
+        return ""
+    if inicio == fim:
+        return data(inicio, hoje)
+    final = "Presente" if fim == hoje else data(fim, hoje)
+    if duas_linhas:
+        return f"<tspan x='0' dy='0'>{data(inicio, hoje)}</tspan><tspan x='0' dy='16'>- {final}</tspan>"
+    return f"{data(inicio, hoje)} - {final}"
+
+
+# Card em SVG, no visual do github-readme-streak-stats
+def svg(dias):
+    hoje = max(dias)
+    (a_ini, a_fim, atual), (m_ini, m_fim, maior) = sequencias(dias)
+    return (MODELO.replace("{TOTAL}", numero(sum(dias.values())))
+            .replace("{PERIODO_TOTAL}", intervalo(min(dias), hoje, hoje, duas_linhas=True))
+            .replace("{ATUAL}", str(atual))
+            .replace("{PERIODO_ATUAL}", intervalo(a_ini, a_fim, hoje))
+            .replace("{MAIOR}", str(maior))
+            .replace("{PERIODO_MAIOR}", intervalo(m_ini, m_fim, hoje, duas_linhas=True)))
 
 
 if __name__ == "__main__":
     dias = calendario(USUARIO)
-    atual, maior = sequencias(dias)
-    SAIDA.write_text(svg(sum(dias.values()), atual, maior), encoding="utf-8")
+    SAIDA.write_text(svg(dias), encoding="utf-8")
+    (_, _, atual), (_, _, maior) = sequencias(dias)
     print(f"total {sum(dias.values())} | sequencia atual {atual} | maior {maior}")
