@@ -21,4 +21,8 @@ Construo sistemas completos, do banco de dados à tela. Na [TargetData](https://
 
 - [LinkedIn](https://www.linkedin.com/in/gustavo-padilha-8b8a511b6/)
 
+### 📊 Contribuições no GitHub
+
+![Contribuições do Gustavo no GitHub](https://streak-stats.demolab.com/?user=guppadilha&locale=pt_BR&hide_border=true)
+
 Obrigado pela visita! 🚀
